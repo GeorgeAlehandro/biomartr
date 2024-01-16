@@ -36,7 +36,7 @@ getSummaryFile <- function(db, kingdom,
   return(summary.file)
 }
 
-assemblies_info_path <- function(db, kingdom = NULL, folder = cachedir()) {
+assemblies_info_path <- function(db, kingdom = NULL, folder = "assembly_summary/") {
   print("new")
   if (!dir.exists(folder)) {
     dir.create(folder, recursive = TRUE)
