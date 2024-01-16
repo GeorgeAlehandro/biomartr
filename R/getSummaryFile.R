@@ -14,7 +14,7 @@
 #' @export
 
 getSummaryFile <- function(db, kingdom,
-                           file = assemblies_info_path(db, kingdom)){
+                           file = assemblies_info_path(db, kingdom, folder = "assembly_summary/")){
 
 
 
@@ -37,11 +37,19 @@ getSummaryFile <- function(db, kingdom,
 }
 
 assemblies_info_path <- function(db, kingdom = NULL, folder = cachedir()) {
+  print("new")
+  if (!dir.exists(folder)) {
+    dir.create(folder, recursive = TRUE)
+  }
+  
+  print(folder)
+  
   basename <- "AssemblyFilesAllKingdoms_"
   if (!is.null(kingdom)) {
     kingdom <- paste0(kingdom, "_")
     basename <- "assembly_summary_"
   }
+  print(paste0(basename, kingdom, db, ".txt"))
   file.path(folder, paste0(basename, kingdom, db, ".txt"))
 }
 

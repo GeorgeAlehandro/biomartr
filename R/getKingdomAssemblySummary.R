@@ -24,7 +24,7 @@
 #' @export
 
 getKingdomAssemblySummary <- function(db, skip_bacteria = TRUE,
-                                      file = assemblies_info_path(db)
+                                      file = assemblies_info_path(db, folder = "assembly_summary/")
                                       ) {
     if (!is.element(db, c("refseq", "genbank")))
         stop("Please select one of the available data bases:
