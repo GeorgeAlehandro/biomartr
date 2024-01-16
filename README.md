@@ -81,44 +81,9 @@ The `biomartr` package relies on some [Bioconductor](https://www.bioconductor.or
 installation of the following packages:
 
 ```r
-# Install core Bioconductor packages
-if (!requireNamespace("BiocManager"))
-    install.packages("BiocManager")
-BiocManager::install()
-# Install package dependencies
-BiocManager::install("Biostrings")
-BiocManager::install("biomaRt")
+BiocManager::install("GeorgeAlehandro/biomartr")
 ```
 
-Now users can install `biomartr` from CRAN:
-
-```r
-# install biomartr 1.0.7 from CRAN
-install.packages("biomartr", dependencies = TRUE)
-
-# install the developer version containing the newest features
-BiocManager::install("ropensci/biomartr")
-```
-
-## Installation with Bioconda
-
-With an activated Bioconda channel (see 2. Set up channels), install with:
-
-```
-conda install r-biomartr
-```
-
-and update with:
-
-```
-conda update r-biomartr
-```
-
-or use the docker container:
-```
-docker pull quay.io/biocontainers/r-biomartr:<tag>
-```
-(check [r-biomartr/tags](https://quay.io/repository/biocontainers/r-biomartr?tab=tags) for valid values for <tag>)
 
 
 ## Example
@@ -220,21 +185,6 @@ library(biomartr)
 browseVignettes("biomartr")
 ```
 
-## NEWS
-The current status of the package as well as a detailed history of the functionality of each version of `biomartr` can be found in the [NEWS](https://docs.ropensci.org/biomartr/news/index.html) section.
-
-
-## Install Developer Version
-Some bug fixes or new functionality will not be available on CRAN yet, but in the developer version here on GitHub. To download and install the most recent version of `biomartr` run:
-
-```r
-# install the current version of biomartr on your system
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("ropensci/biomartr")
-```
-
 ## Genomic Data Retrieval
 
 #### Meta-Genome Retrieval
@@ -305,25 +255,6 @@ BiocManager::install("ropensci/biomartr")
 #### Gene Ontology
 
 * `getGO()` : Function to retrieve GO terms for a given set of genes
-
-
-## Download Developer Version On Windows Systems
-
-```r
-# On Windows, this won't work - see ?build_github_devtools
-install_github("HajkD/biomartr", build_vignettes = TRUE, dependencies = TRUE)
-
-# When working with Windows, first you need to install the
-# R package: rtools -> install.packages("rtools")
-
-# Afterwards you can install devtools -> install.packages("devtools")
-# and then you can run:
-
-devtools::install_github("HajkD/biomartr", build_vignettes = TRUE, dependencies = TRUE)
-
-# and then call it from the library
-library("biomartr", lib.loc = "C:/Program Files/R/R-3.1.1/library")
-```
 
 # Code of conduct
 
