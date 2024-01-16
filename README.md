@@ -229,10 +229,7 @@ Some bug fixes or new functionality will not be available on CRAN yet, but in th
 
 ```r
 # install the current version of biomartr on your system
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("ropensci/biomartr")
+BiocManager::install("GeorgeAlehandro/biomartr")
 ```
 
 ## Genomic Data Retrieval
